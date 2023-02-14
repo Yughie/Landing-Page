@@ -21,11 +21,23 @@ body{
     font-family: 'Public Sans', sans-serif;
     color: $grayish-blue;
     line-height: 1.3;
+    
+    &.noScroll {
+        overflow: hidden;
+    }
 }
 
 //for all links visited and hover
 a, a:visited, a:hover {
       text-decoration: none;
+}
+
+
+//h1, h2, h3 
+
+h1, h2, h3 {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 //flex box styles
@@ -51,10 +63,14 @@ a, a:visited, a:hover {
     padding: 0.875rem 2.1875rem;
     border-radius: 30px;
     cursor: pointer;
+    font-size: $font-sm;
     background: linear-gradient(45deg, $lime-green, $bright-cyan);
     border: none;
     color: $white;
     font-weight: 300;
+    font-size: 14px;
+    text-align: center;
+    align-items: center;
 
     &:hover{
         opacity: 75%;
@@ -75,4 +91,15 @@ a, a:visited, a:hover {
     @include breakpoint-up(large){
         display: none;
     }
+}
+
+
+//Padding Global
+
+.generalPadding {
+    padding-top: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    
 }
