@@ -1,8 +1,17 @@
 @use "../abstract/index.scss" as *;
 
 .hero {
+    border: 1px solid;
     margin-bottom: 1.5rem;
+
+    @include breakpoint-up(large){
+        display: flex;
+        margin-top: 105px;
+       
+    };
+
     &__image{
+        
         position: relative;
         background-image: url('../../images/bg-intro-mobile.svg');
         background-size: cover;
@@ -11,6 +20,13 @@
         width: 100%;
         top: 1.25rem;
         min-height: 25rem;
+
+        @include breakpoint-up(large){
+            order: 2;
+           background-image: url(../../images/bg-intro-desktop.svg);
+           background-position: center;
+            
+        }
 
 
         &::before{
@@ -25,12 +41,20 @@
             top: -2.2875rem;
             left: 50%;
             transform: translateX(-50%);
+            
         }
     }
 
     &__text{
+        border: 1px solid red;
         text-align: center;
         padding-top: 0;
+
+
+        @include breakpoint-up(large){
+            order: 1;
+            height: 41rem;
+        }
         h1{
             
             color: $darkblue;
@@ -46,11 +70,9 @@
             font-size: 0.875rem;
             margin-bottom: 1.5rem;
         }
-        .button{
+        &.hero-button {
+            display: block;
+        }
             
         }
-    }
-
-    
-
 }
