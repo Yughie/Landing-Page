@@ -27,7 +27,8 @@
         min-height: 25rem;
         margin-bottom: -59px;
         top: -60px;
-        //border: 1px solid;
+        
+        
 
         @include breakpoint-up(large) {
             flex: 3;
@@ -47,7 +48,7 @@
                 height: 130%;
                 left: 50%;
                 transform: translate(-35%, -3%);
-                border: 1px solid;
+               
                 
             }
            
@@ -117,7 +118,7 @@
             margin-bottom: 1.5rem;
 
             @include breakpoint-up(large) {
-                font-size: $font-med;
+                font-size: $font-lg;
             }
         }
 
