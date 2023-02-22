@@ -3,15 +3,33 @@
 .feature-section {
     text-align: center;
 
+    @include breakpoint-up(large){
+        text-align: left;
+        margin-top: 15rem;
+    }
+    
     h2{
         color: $darkblue;
         font-size: 1.625rem;
         width: 80%;
         margin: 0 auto;
+
+        @include breakpoint-up(large){
+            width: 100%;
+            font-size: $font-lg;
+            margin-left: 6rem;
+        }
         
     }
-    p{
+    .tagline{
         font-size: $font-sm;
+
+        @include breakpoint-up(large){
+            font-size: $font-med;
+            margin-left: 6rem;
+            width: 35%;
+            
+        }
 
     }
     
@@ -19,13 +37,30 @@
         display: flex;
         justify-content: center;
         flex-direction: column;
+
+        @include breakpoint-up(large){
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 0 6rem;
+        }
        .feature{
             margin-top: 2rem;
-            img{
+            text-align: center;
+            @include breakpoint-up(large){
+                text-align: left;
+                width: 265px;
                 
+            }
+            img{
+
             }
             h3{
                 color: $darkblue;
+            }
+            p{
+            @include breakpoint-up(large){
+                
+            }
             }
             
        }

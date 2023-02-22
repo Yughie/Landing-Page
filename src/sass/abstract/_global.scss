@@ -111,6 +111,8 @@ h1, h2, h3 {
         padding-bottom: 2.25rem;
         padding-right: 2rem;
         padding-left: 2rem;
+
+        
     }
     &--py{
         padding-top: 2.25rem;
@@ -119,6 +121,10 @@ h1, h2, h3 {
     &--px {
         padding-right: 2rem;
         padding-left: 2rem;
+        @include breakpoint-up(large) {
+            padding-right: 6rem;
+            padding-left: 6rem;
+        }
     }
     &--pt {
         padding-top: 2.25rem;

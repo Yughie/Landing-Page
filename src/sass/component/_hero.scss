@@ -94,7 +94,7 @@
             flex: 2;
             order: 1;
             text-align: left;
-            padding-left: 6rem;
+            margin-left: 6rem;
 
         }
 
@@ -118,7 +118,7 @@
             margin-bottom: 1.5rem;
 
             @include breakpoint-up(large) {
-                font-size: $font-lg;
+                font-size: $font-med;
             }
         }
 
