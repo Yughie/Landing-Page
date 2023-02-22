@@ -1,0 +1,33 @@
+@use "../abstract/index.scss" as *;
+
+.feature-section {
+    text-align: center;
+
+    h2{
+        color: $darkblue;
+        font-size: 1.625rem;
+        width: 80%;
+        margin: 0 auto;
+        
+    }
+    p{
+        font-size: $font-sm;
+
+    }
+    
+    .feature-Container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+       .feature{
+            margin-top: 2rem;
+            img{
+                
+            }
+            h3{
+                color: $darkblue;
+            }
+            
+       }
+    }
+}
