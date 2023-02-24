@@ -42,8 +42,8 @@
         padding: 1.875rem;
         
         @include breakpoint-up(large){
-            padding-left: 16rem;
-            padding-right: 16rem;
+            padding-left: $padding-lg;
+            padding-right: $padding-lg;
            
         }
     }

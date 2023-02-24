@@ -88,14 +88,10 @@
         padding-top: 0;
         
 
-
-
         @include breakpoint-up(large) {
             flex: 2;
             order: 1;
             text-align: left;
-            margin-left: $padding-lg;
-
         }
 
         h1 {
