@@ -9,24 +9,39 @@
     
     @include breakpoint-up(large){
         display: grid;
+        grid-template-columns: 2fr 1fr 1fr 4fr;
+        grid-template-rows:  1fr 1fr;
+        grid-template-areas: 
+        "logo a b cta"
+        "social . . .";
+        gap: 2rem;
+        text-align: left;
+        padding: 0 12rem;
     }
 
     a{
         color: $white;
     }
-
-    &__medias{
-        margin-bottom: 1.875rem;
-    }
+ 
 
     &__logo{
-        margin-bottom: 1.875rem;
+        //margin-bottom: 1.875rem;
+        @include breakpoint-up(large){
+             grid-area: logo;
+        }
+        
     }
-    &__socialMedias{
+    &__social{
        a:not(:last-child){
         display: inline-block;
         margin-right: 0.75rem;
        }
+       margin-bottom: 1.875rem;
+       
+       @include breakpoint-up(large){
+        grid-area: social;
+        }
+       
 
     }
 
@@ -38,10 +53,16 @@
         line-height: 2;
 
         &.col1{
-
+            margin-bottom: 1.875rem;@include breakpoint-up(large){
+               grid-area: a;
+            }
         }
         &.col2{
             margin-bottom: 1.875rem;
+
+            margin-bottom: 1.875rem;@include breakpoint-up(large){
+                grid-area: b;
+            }
         }
     }
 
@@ -50,9 +71,47 @@
         
         margin-bottom: 1.875rem;
         }
+        margin-bottom: 1.875rem;@include breakpoint-up(large){
+           grid-area: cta;
+        }
     }
     &__credits{
         margin-top: 1.875rem;
+        margin-bottom: 1.875rem;@include breakpoint-up(large){
+           grid-area: cta;
+        }
     }
     
+}
+
+
+.sample{
+    &.container{
+        display: grid;
+        grid-template-columns: 3fx 1fx 1fx 4fx;
+        grid-template-rows: repeat(2, 1fx);
+        grid-template-areas: 
+        "header frame1 frame2 footer"
+        "content frame1 frame2 footer";
+    }
+    &__header{
+        border:1px solid;
+        grid-area: header;
+    }
+    &__content{
+        border: 1px solid;
+        grid-area: content;
+    }
+    &__frame1{
+        border: 1px solid;
+        grid-area: frame1;
+    }
+    &__frame2{
+        border: 1px solid;
+        grid-area: frame2;
+    }
+    &__footer{
+        border: 1px solid;
+        grid-area: footer;
+    }
 }
