@@ -1,117 +1,89 @@
 @use "../abstract/index.scss" as *;
 
 
+
+
 .footer{
     background-color: $darkblue;
     color: $white;
-    padding: 2.5rem;
+    //padding: 2.5rem;
     text-align: center;
     
-    @include breakpoint-up(large){
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr 4fr;
-        grid-template-rows:  1fr 1fr;
-        grid-template-areas: 
-        "logo a b cta"
-        "social . . .";
-        gap: 2rem;
-        text-align: left;
-        padding: 0 12rem;
+    &__container{
+
+       
+
+        @include breakpoint-up(large){
+           // margin: 0 12rem;
+            display: grid;
+            grid-template-columns: 3fx 1fx 1fx 4fx;
+            grid-template-rows: repeat(2, 1fx);
+            grid-template-areas: 
+            "logo link1 link2 cta"
+            "social link1 link2 cta";
+            text-align: left;
+        }
+        
     }
 
     a{
         color: $white;
     }
- 
 
     &__logo{
-        //margin-bottom: 1.875rem;
+        
+
+        margin-bottom: 1.875rem;
         @include breakpoint-up(large){
-             grid-area: logo;
+            grid-area: logo;
         }
         
     }
     &__social{
-       a:not(:last-child){
-        display: inline-block;
-        margin-right: 0.75rem;
-       }
-       margin-bottom: 1.875rem;
-       
-       @include breakpoint-up(large){
-        grid-area: social;
-        }
-       
-
-    }
-
-    &__links{
         
+        margin-bottom: 1.875rem;
+        a:not(:last-child){
+            display: inline-block;
+            margin-right: 0.75rem;
+        }
+           
+        
+        @include breakpoint-up(large){
+            grid-area: social;
+        }
+    }
+    &__link{
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: left;
         line-height: 2;
+        
+        @include breakpoint-up(large){
+            text-align: left;
+        }
+
 
         &.col1{
-            margin-bottom: 1.875rem;@include breakpoint-up(large){
-               grid-area: a;
+            @include breakpoint-up(large){
+               grid-area: link1;
             }
         }
         &.col2{
             margin-bottom: 1.875rem;
-
-            margin-bottom: 1.875rem;@include breakpoint-up(large){
-                grid-area: b;
+            @include breakpoint-up(large){
+                grid-area: link2;
             }
         }
     }
-
     &__cta{
-        a{
         
-        margin-bottom: 1.875rem;
-        }
-        margin-bottom: 1.875rem;@include breakpoint-up(large){
-           grid-area: cta;
+        
+        @include breakpoint-up(large){
+            grid-area: cta;
         }
     }
     &__credits{
-        margin-top: 1.875rem;
-        margin-bottom: 1.875rem;@include breakpoint-up(large){
-           grid-area: cta;
-        }
-    }
-    
-}
-
-
-.sample{
-    &.container{
-        display: grid;
-        grid-template-columns: 3fx 1fx 1fx 4fx;
-        grid-template-rows: repeat(2, 1fx);
-        grid-template-areas: 
-        "header frame1 frame2 footer"
-        "content frame1 frame2 footer";
-    }
-    &__header{
-        border:1px solid;
-        grid-area: header;
-    }
-    &__content{
-        border: 1px solid;
-        grid-area: content;
-    }
-    &__frame1{
-        border: 1px solid;
-        grid-area: frame1;
-    }
-    &__frame2{
-        border: 1px solid;
-        grid-area: frame2;
-    }
-    &__footer{
-        border: 1px solid;
-        grid-area: footer;
+        padding-top: 1.875rem;
+        
     }
 }
