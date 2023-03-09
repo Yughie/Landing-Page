@@ -3,87 +3,118 @@
 
 
 
-.footer{
+.footer {
     background-color: $darkblue;
     color: $white;
-    //padding: 2.5rem;
     text-align: center;
-    
-    &__container{
 
-       
+    &__container {
 
-        @include breakpoint-up(large){
-           // margin: 0 12rem;
+        @include breakpoint-up(large) {
             display: grid;
             grid-template-columns: 3fx 1fx 1fx 4fx;
             grid-template-rows: repeat(2, 1fx);
-            grid-template-areas: 
-            "logo link1 link2 cta"
-            "social link1 link2 cta";
+            grid-template-areas:
+                "logo link1 link2 cta"
+                "social link1 link2 cta";
             text-align: left;
+            align-items: center;
         }
-        
+
     }
 
-    a{
+    a {
         color: $white;
     }
 
-    &__logo{
-        
+    &__logo {
+        margin-bottom: 1.875rem;
+        fill: $white;
 
-        margin-bottom: 1.875rem;
-        @include breakpoint-up(large){
+        @include breakpoint-up(large) {
             grid-area: logo;
+            margin-bottom: 0;
+            align-self: flex-start;
         }
-        
+
     }
-    &__social{
-        
+
+    &__social {
         margin-bottom: 1.875rem;
-        a:not(:last-child){
+
+        a {
+            fill: $white;
+
+            &:hover {
+                fill: $lime-green-light;
+            }
+        }
+
+        a:not(:last-child) {
             display: inline-block;
             margin-right: 0.75rem;
+            margin-bottom: 0;
         }
-           
-        
-        @include breakpoint-up(large){
+
+        @include breakpoint-up(large) {
+            margin-bottom: 0;
             grid-area: social;
+            align-self: flex-end;
+
         }
     }
-    &__link{
+
+    &__link {
         display: flex;
         flex-direction: column;
-        align-items: left;
         line-height: 2;
-        
-        @include breakpoint-up(large){
+
+        a {
+            color: $white;
+
+            &:hover {
+                color: $lime-green-light;
+            }
+        }
+
+        @include breakpoint-up(large) {
             text-align: left;
+            align-content: center;
         }
 
 
-        &.col1{
-            @include breakpoint-up(large){
-               grid-area: link1;
+        &.col1 {
+
+            @include breakpoint-up(large) {
+                grid-area: link1;
+
             }
         }
-        &.col2{
+
+        &.col2 {
             margin-bottom: 1.875rem;
-            @include breakpoint-up(large){
+
+            @include breakpoint-up(large) {
                 grid-area: link2;
+                margin-bottom: 0;
+
             }
         }
     }
-    &__cta{
-        
-        
-        @include breakpoint-up(large){
+
+    &__cta {
+
+        @include breakpoint-up(large) {
             grid-area: cta;
+            text-align: right;
+            align-self: flex-end;
         }
     }
-    &__credits{
+
+    &__credits {
         padding-top: 1.875rem;
-        
+        font-size: 14px;
+        color: $light-grayish-blue;
     }
+
 }
